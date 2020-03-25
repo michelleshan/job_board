@@ -1,0 +1,78 @@
+.container-fluid{
+    margin: 20px 20px;
+    padding: 20px 50px;
+}
+
+.col{
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 20px;
+    /* border: 1px dotted red; */
+}
+
+a{
+    text-decoration: underline;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.heading{
+    border: 1px dotted red;
+}
+
+button{
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 4px 4px grey;
+    border: 1px solid black;
+}
+
+table{
+    border: 2px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+thead{
+    padding: 4px 8px;
+    border-bottom: 2px solid black;
+}
+
+th{
+    padding: 4px 10px;
+}
+
+td{
+    padding: 4px 8px;
+    border-right: 1px solid black;
+}
+
+.viewjob{
+    width: 400px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border: 4px solid black;
+}
+
+h3{
+    display: inline-block;
+}
+
+.back{
+    margin-right: 10px;
+}
+
+.addtomyjobs{
+    font-size: 20px;
+}
+
+.messages{
+    color: red;
+}

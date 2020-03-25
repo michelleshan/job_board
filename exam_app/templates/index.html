@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register/Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class='container-fluid'>
+        <h1>Welcome to Handy Helper</h1>
+        <div class='row'>
+            <div class='col'>
+                <h2>Register</h2>
+                {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>   
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <form action='/createUser' method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputTitle">First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="exampleInputTitle" required>
+                    <label for="exampleInputTitle">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="exampleInputTitle" required>
+                    <label for="exampleInputTitle">Email</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputTitle" required>
+                    <label for="exampleInputTitle">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputTitle" required>
+                    <label for="exampleInputTitle">Confirm PW</label>
+                    <input type="password" class="form-control" name="confirm_pw" id="exampleInputTitle" required>
+                </div>
+                <button type='submit'>Register</button>
+                </form>
+            </div>
+            <div class='col'>
+                <h2>Login</h2>
+                <form action='/logIn' method='POST'>
+                {% csrf_token %}
+                <div class='form-group'>
+                    <label for="exampleInputTitle">Email</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputTitle" required>
+                    <label for="exampleInputTitle">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputTitle" required>
+                </div>
+                <button type='submit'>Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
