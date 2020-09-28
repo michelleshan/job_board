@@ -91,14 +91,14 @@ def view_job(request,id):
         return redirect('/dashboard')
 
 def add_to_my_jobs(request,id):
-    if request.method == 'POST':
+    if request.method == 'GET':
         some_job = Job.objects.get(id=id)
         some_user = User.objects.get(id=request.session['user_id'])
         some_user.jobs_worked.add(some_job)
         return redirect('/dashboard')
 
 def remove_from_my_jobs(request,id):
-    if request.method == 'POST':
+    if request.method == 'GET':
         some_job = Job.objects.get(id=id)
         some_user = User.objects.get(id=request.session['user_id'])
         some_user.jobs_worked.remove(some_job)

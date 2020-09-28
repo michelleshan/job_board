@@ -20,7 +20,7 @@ class UserManager(models.Manager):
         return errors
     def login_validators(self,requestPOST):
         errors = {}
-        existing_emails = User.objects.filter(email=postData['email'])
+        existing_emails = User.objects.filter(email=requestPOST['email'])
         if len(existing_emails) < 1:
             errors['no_email'] = "This email is not registered in the database."
         return errors
